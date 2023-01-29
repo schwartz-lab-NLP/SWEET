@@ -24,7 +24,27 @@ Once everything is set up, clone this repository and follow these 4 simple steps
 
 
 ## Execution
-We provide 
+We provide instructions for training EE amd MM bert models 
 ### Early Exit - SWEET
+Navigate to the directory contatining the _run_glue_ files:
+```bash 
+cd /transformers/examples/pytorch/text-classification
+```
+one in the correct filder, run: 
+```bash 
+python3 run_glue_EE.py --model_name_or_path bert-base-uncased --task_name mnli --per_device_train_batch_size 16 --per_device_eval_batch_size 1 --do_train --do_calibration --do_eval --max_seq_length 256 --max_train_samples 6000 --output_dir ${OUTPUT_DIR} --cache_dir ${CACHE_DIR} --learning_rate 5e-5 --exit_layers 0_3_5_11  --exit_threshold 11 --num_train_epochs 2 --SWEET
+```
+
+* To run standard early exiting (without SWEET), disable the SWEET flag at the end of the line
 
 ### Multi Model
+
+```bash 
+python3 run_glue_MM.py --model_name_or_path bert-base-uncased --task_name mnli --per_device_train_batch_size 16 --per_device_eval_batch_size 1 --do_train --do_calibration --do_eval --max_seq_length 256 --max_train_samples 6000 --output_dir ${OUTPUT_DIR} --cache_dir ${CACHE_DIR} --learning_rate 5e-5 --exit_layers 0_3_5_11  --exit_threshold 11 --num_train_epochs 2
+```
+* Insert your own output_dir and cache_dir arguments to make the doce compatible with your local machine
+* For running deberta, use --model_name_or_path microsoft/deberta-base
+
+
+
+
