@@ -3,7 +3,7 @@ Separating Weights for Early-Exit Transformers
 
 This repository contains the code used for experiments in the paper  
  
- [**Finding the SWEET spot:** Improvement and Anlysis of Adaptive Inference in Low Resource Settings''][arxiv](https://arxiv.org/abs/2306.02307)
+ **Finding the SWEET spot:** [Improvement and Anlysis of Adaptive Inference in Low Resource Settings''](https://arxiv.org/abs/2306.02307)
  
 <p align="center">
     <img src=/figures/SWEET_illustration.png  width=40% height=40% align="center" alt="Illustration of the SWEET method">
